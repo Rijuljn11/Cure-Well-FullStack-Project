@@ -30,7 +30,7 @@ export default function Surgeries() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // ✅ ADD
+  
   const handleAdd = () => {
     if (!form.doctorId || !form.surgeryDate || !form.startTime || !form.endTime || !form.surgeryCategory) {
       toast.warning("All fields are required ⚠️");
@@ -59,7 +59,7 @@ export default function Surgeries() {
       .catch(() => toast.error("Failed to add surgery ❌"));
   };
 
-  // ✅ DELETE
+  
   const handleDelete = (id) => {
     if (!window.confirm("Delete this surgery?")) return;
 
@@ -71,7 +71,7 @@ export default function Surgeries() {
       .catch(() => toast.error("Delete failed ❌"));
   };
 
-  // ✅ UPDATE
+  //UPDATE
   const handleUpdate = () => {
     if (!editData.startTime || !editData.endTime || !editData.surgeryCategory) {
       toast.warning("All fields required ⚠️");
@@ -154,7 +154,7 @@ export default function Surgeries() {
                   </span>
                 </td>
                 <td>
-                  {/* ✅ EDIT BUTTON */}
+                  {/* EDIT BUTTON */}
                   <button
                     className="btn btn-warning btn-sm me-2"
                     onClick={() => setEditData(s)}
@@ -202,7 +202,7 @@ export default function Surgeries() {
         </div>
       )}
 
-      {/* 🔥 EDIT MODAL */}
+      {/*EDIT MODAL */}
       {editData && (
         <div className="modal d-block" style={{ background: "rgba(0,0,0,0.6)" }}>
           <div className="modal-dialog">
