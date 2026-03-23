@@ -28,10 +28,15 @@ public class SurgeryServiceImpl implements SurgeryService {
     }
 
     @Override
-    public Surgery updateSurgery(Surgery surgery) {
+    public Surgery updateSurgery(int id, Surgery surgery) {
 
+        Surgery existing = surgeryRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Surgery not found with id: " + id));
+        existing.setStartTime(surgery.getStartTime());
+        existing.setEndTime(surgery.getEndTime());
+        existing.setSurgeryCategory(surgery.getSurgeryCategory());
 
-        return surgeryRepository.save(surgery);
+        return surgeryRepository.save(existing);
     }
 
     @Override

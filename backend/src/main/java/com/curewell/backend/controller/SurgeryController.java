@@ -31,10 +31,9 @@ public class SurgeryController {
         surgeryService.deleteSurgery(id);
     }
 
-    @PutMapping("/surgeries")
-    public Surgery updateSurgery(@RequestBody Surgery surgery) {
-
-        return surgeryService.updateSurgery(surgery);
+    @PutMapping("/{id}")
+    public Surgery updateSurgery(@PathVariable int id, @RequestBody Surgery surgery) {
+        return surgeryService.updateSurgery(id, surgery);
     }
 
 }

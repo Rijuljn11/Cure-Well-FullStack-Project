@@ -9,7 +9,7 @@ public interface SurgeryService {
 
     List<Surgery> getTodaySurgeries();
 
-    Surgery updateSurgery(Surgery surgery);
+    Surgery updateSurgery(int id, Surgery surgery);
 
     void deleteSurgery(int id);
 }
