@@ -21,5 +21,5 @@ export const getDoctorsBySpecialization = (code) => {
 export const getTodaySurgeries = () =>
   axios.get(`${BASE_URL}/today`);
 
-export const updateSurgery = (data) =>
-  axios.put(`${BASE_URL}/surgeries`, data);
+export const updateSurgery = (id, data) =>
+  axios.put(`${BASE_URL}/surgeries/${id}`, data);
